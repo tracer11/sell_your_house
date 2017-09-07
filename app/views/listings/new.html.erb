@@ -1,0 +1,10 @@
+<h1>Please Enter Your Address</h1>
+
+<%= form_tag '/listings', method: :post do %>
+  <div>
+    <input type="text" name="address" placeholder="1234 W.Example St">
+  </div>
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+<% end %>

@@ -1,10 +1,10 @@
 class ListingsController < ApplicationController
-
+  
   def new
   end
 
   def create
-    @listing = Listing.new(address: params[:address],
+    listing = Listing.new(address: params[:address],
                           latitude: params[:latitude],
                           longitude: params[:longitude],
                           renovation: params[:renovation],
@@ -12,7 +12,12 @@ class ListingsController < ApplicationController
                           basement: params[:basement],
                           basement_finished: params[:basement_finished],
                           )
-     if @listing.save
-      redirect_to ''
+     if listing.save
+      redirect_to "/listings/#{listing.id}"
+    end
+  end
+
+  def show
+    @listing = Listing.find(params[:id])
   end
 end
