@@ -2,7 +2,24 @@
 
 <%= form_tag '/listings', method: :post do %>
   <div>
+    <label>Street Address</label>
+    <br>
     <input type="text" name="address" placeholder="1234 W.Example St">
+  </div>
+  <div>
+    <label>City</label>
+    <br>
+    <input type="text" name="city" placeholder="Chicago">
+  </div>
+  <div>
+    <label>State</label>
+    <br>
+    <input type="text" name="state" placeholder="Illinois">
+  </div>
+  <div>
+    <label>Zip Code</label>
+    <br>
+    <input type="text" name="zip_code" placeholder="60610">
   </div>
   <div>
     <input type="submit" value="Submit">

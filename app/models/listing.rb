@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-  #attr_accessor :address, :latitude, :longitude
   geocoded_by :address
-  after_validation :geocode #, if => :address_change
+  after_validation :geocode 
+  has_many :pictures, :dependent => :destroy
 end

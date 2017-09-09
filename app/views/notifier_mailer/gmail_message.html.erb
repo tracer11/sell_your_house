@@ -1,0 +1,54 @@
+<h1>New Listing</h1>
+
+<div>
+  <label>Address:</label>
+  <%= @listing.address %>
+</div>
+<div>
+  <label>City:</label>
+  <%= @listing.city %>
+</div>
+<div>
+  <label>State:</label>
+  <%= @listing.state %>
+</div>
+<div>
+  <label>Zip Code:</label>
+  <%= @listing.zip_code %>
+</div>
+<div>
+  <label>Renovation:</label>
+  <%= @listing.renovation %>
+</div>
+<div>
+  <label>Renovation Cost:</label>
+  $<%= @listing.renovation_cost %>
+</div>
+<div>
+  <label>Basement:</label>
+  <%= @listing.basement %>
+</div>
+<div>
+  <label>Basement Finished?:</label>
+  <%= @listing.basement_finished %>
+</div>
+<div>
+  <label>Name:</label>
+  <%= @listing.first_name %> <%= @listing.last_name %>
+</div>
+<div>
+  <label>Email:</label>
+  <%= @listing.email %>
+</div>
+<div>
+  <label>Phone Number:</label>
+  <%= @listing.phone_number %>
+</div>
+<div>
+  <% @listing.pictures.each do |pic| %>
+     <%= image_tag attachments["#{pic.image_file_name}"].url %>
+  <% end %>
+</div>
+
+
+

@@ -1,0 +1,75 @@
+<%= form_tag "/listings/#{@listing.id}/",method: :patch, multipart: true do  %>
+  <div>
+    <input type="text" name="address" value="<%= @listing.address %>">
+  </div>
+   <div>
+    <input type="text" name="city" value="<%= @listing.city %>">
+  </div>
+   <div>
+    <input type="text" name="state" value="<%= @listing.state %>">
+  </div>
+   <div>
+    <input type="text" name="zip_code" value="<%= @listing.zip_code %>">
+  </div>
+  <div>
+    <label>Has any renovation been done to the house?</label>
+    <br>
+    <select name="renovation">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>    
+  </div>
+  <div>
+    <label>How much money did you spend on renovations?</label>
+    <br>
+    <input type="text" name="renovation_cost">
+  </div>
+   <div>
+      <label>Does this house have a basement?</label>
+      <br>
+      <select name="basement">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+   </div>
+   <div>
+     <label>Is the basement finished?</label>
+     <br>
+     <select name="basement_finished">
+       <option value="Yes">Yes</option>
+       <option value="No">No</option>
+     </select>
+   </div>
+   <br>
+   <label>Who should we contact?</label>
+   <br>
+   <div>
+      <label>First Name</label>
+      <br>
+     <input type="text" name="first_name">
+   </div>
+   <div>
+     <label>Last Name</label>
+     <br>
+     <input type="text" name="last_name">
+   </div>
+   <div>
+     <label>Email</label>
+     <br>
+     <input type="text" name="email">
+   </div>
+   <div>
+     <label>Phone Number</label>
+     <br>
+     <input type="text" name="phone_number">
+   </div>
+   <div>
+     <label> Please upload pictures of the exterior and interior of the house</label>
+     <br>
+     <%= file_field_tag "images[]", type: :file, multiple: true %>
+   </div>
+
+   <div>
+     <input type="submit" value="Submit">
+   </div>
+<% end %>
